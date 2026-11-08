@@ -1,0 +1,295 @@
+/* ===== Palet warna ===== */
+:root {
+    --orange: #DB9558;
+    --orange-soft: #F6E3CF;
+    --cream: #FCF9EA;
+    --sage: #97A87A;
+    --sage-light: #A8BBA3;
+    --sage-pale: #E6EDDF;
+    --ink: #2E3A24;        /* hijau tua untuk teks */
+    --ink-soft: #5C6650;   /* teks pendukung */
+
+    /* menimpa bawaan Bootstrap */
+    --bs-body-bg: var(--cream);
+    --bs-body-color: var(--ink);
+    --bs-body-font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --bs-border-radius: 0.9rem;
+    --bs-link-color-rgb: 46, 58, 36;
+    --bs-link-hover-color-rgb: 92, 102, 80;
+}
+
+body {
+    background-color: var(--cream);
+    background-image:
+        radial-gradient(circle at 100% 0%, rgba(168, 187, 163, 0.35) 0, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(219, 149, 88, 0.15) 0, transparent 35%);
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Lora', Georgia, serif;
+}
+
+.text-soft {
+    color: var(--ink-soft);
+}
+
+/* ===== Navbar ===== */
+.navbar-sage {
+    background: linear-gradient(90deg, var(--sage) 0%, var(--sage-light) 100%);
+    border-radius: 0 0 24px 24px;
+}
+.navbar-sage .navbar-brand,
+.navbar-sage .nav-user {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+/* ===== Banner dashboard ===== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    border-radius: 24px;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 100%);
+    box-shadow: 0 8px 22px rgba(46, 58, 36, 0.15);
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    right: -50px;
+    top: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(252, 249, 234, 0.35);
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    right: 90px;
+    bottom: -70px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(219, 149, 88, 0.45);
+}
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+.hero-kicker {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+/* ===== Tombol (bentuk pil) ===== */
+.btn-orange,
+.btn-cream {
+    border-radius: 50rem;
+    font-weight: 700;
+    color: var(--ink);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-orange {
+    background: var(--orange);
+    border: 1px solid var(--orange);
+}
+.btn-orange:hover,
+.btn-orange:focus {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(219, 149, 88, 0.5);
+}
+.btn-cream {
+    background: var(--cream);
+    border: 1px solid var(--sage-light);
+}
+.btn-cream:hover,
+.btn-cream:focus {
+    background: #fff;
+    color: var(--ink);
+    transform: translateY(-2px);
+}
+
+/* ===== Kartu ===== */
+.card-soft {
+    background: #fff;
+    border: 1px solid rgba(151, 168, 122, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(46, 58, 36, 0.08);
+}
+.row .card-soft {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.row .card-soft:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(46, 58, 36, 0.14);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+    color: var(--ink);
+    background: var(--sage-pale);
+}
+.stat-icon.orange {
+    background: var(--orange-soft);
+}
+
+/* ===== Tabel ===== */
+.table-perpus {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: rgba(168, 187, 163, 0.16);
+    margin-bottom: 0;
+}
+.table-perpus thead th {
+    background: var(--sage-pale);
+    color: var(--ink);
+    border-bottom: 2px solid var(--sage-light);
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    white-space: nowrap;
+}
+.table-perpus > :not(caption) > * > * {
+    border-bottom-color: rgba(151, 168, 122, 0.25);
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+.table-perpus td {
+    vertical-align: middle;
+}
+
+.cover-thumb {
+    width: 56px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+.cover-placeholder {
+    width: 56px;
+    height: 80px;
+    border-radius: 8px;
+    background: var(--sage-pale);
+    border: 1px dashed var(--sage);
+    color: var(--ink-soft);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+}
+
+/* ===== Badge status ===== */
+.badge {
+    padding: 0.5em 1em;
+    font-weight: 700;
+}
+.badge-tersedia {
+    background: var(--sage-light);
+    color: var(--ink);
+}
+.badge-dipinjam {
+    background: var(--orange);
+    color: var(--ink);
+}
+
+/* ===== Form ===== */
+.form-control,
+.input-group-text {
+    border-color: rgba(151, 168, 122, 0.6);
+}
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 0.25rem rgba(151, 168, 122, 0.35);
+}
+.form-check-input:checked {
+    background-color: var(--sage);
+    border-color: var(--sage);
+}
+.form-check-input:focus {
+    border-color: var(--sage);
+    box-shadow: 0 0 0 0.25rem rgba(151, 168, 122, 0.35);
+}
+.input-group-text {
+    background: var(--sage-pale);
+    color: var(--ink-soft);
+}
+
+.alert {
+    border-radius: 14px;
+}
+
+/* ===== Halaman login ===== */
+.login-wrap {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--cream) 45%, var(--sage-light) 100%);
+}
+.login-wrap::before {
+    content: "";
+    position: absolute;
+    top: -110px;
+    left: -90px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: rgba(219, 149, 88, 0.25);
+}
+.login-wrap::after {
+    content: "";
+    position: absolute;
+    bottom: -120px;
+    right: -80px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(151, 168, 122, 0.35);
+}
+.login-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 28px;
+    box-shadow: 0 16px 40px rgba(46, 58, 36, 0.18);
+}
+.login-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    box-shadow: 0 6px 16px rgba(219, 149, 88, 0.5);
+}
+
+/* ===== Popup SweetAlert ===== */
+.swal2-popup {
+    border-radius: 22px;
+    font-family: inherit;
+    background: var(--cream);
+    color: var(--ink);
+}
+
+/* ===== Footer ===== */
+.footer-text {
+    color: var(--ink-soft);
+}
